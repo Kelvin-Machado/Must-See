@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6AC4E07255B682500E58943 /* Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4E06255B682500E58943 /* Fade.swift */; };
 		B6AED482255210C80074B704 /* ConfigureNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */; };
 		B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8683B2552044300A50AA8 /* AppDelegate.swift */; };
 		B6E8683E2552044300A50AA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8683D2552044300A50AA8 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6AC4E06255B682500E58943 /* Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fade.swift; sourceTree = "<group>"; };
 		B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureNavigationBar.swift; sourceTree = "<group>"; };
 		B6E868382552044300A50AA8 /* Must-See.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Must-See.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E8683B2552044300A50AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */,
+				B6AC4E06255B682500E58943 /* Fade.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				B6E868402552044300A50AA8 /* SearchViewController.swift in Sources */,
 				B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */,
+				B6AC4E07255B682500E58943 /* Fade.swift in Sources */,
 				B6AED482255210C80074B704 /* ConfigureNavigationBar.swift in Sources */,
 				B6E8683E2552044300A50AA8 /* SceneDelegate.swift in Sources */,
 			);
