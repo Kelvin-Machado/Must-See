@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B67448B22562FF3D00C1A7A1 /* Alamofire */; };
+		B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448B7256305F900C1A7A1 /* OMDb.swift */; };
+		B67448BD25630D1A00C1A7A1 /* loadImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448BC25630D1A00C1A7A1 /* loadImages.swift */; };
 		B6AC4E07255B682500E58943 /* Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4E06255B682500E58943 /* Fade.swift */; };
 		B6AED482255210C80074B704 /* ConfigureNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */; };
 		B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8683B2552044300A50AA8 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B67448B7256305F900C1A7A1 /* OMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDb.swift; sourceTree = "<group>"; };
+		B67448BC25630D1A00C1A7A1 /* loadImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImages.swift; sourceTree = "<group>"; };
 		B6AC4E06255B682500E58943 /* Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fade.swift; sourceTree = "<group>"; };
 		B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureNavigationBar.swift; sourceTree = "<group>"; };
 		B6E868382552044300A50AA8 /* Must-See.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Must-See.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,7 @@
 			children = (
 				B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */,
 				B6AC4E06255B682500E58943 /* Fade.swift */,
+				B67448BC25630D1A00C1A7A1 /* loadImages.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 		B6E868712552065800A50AA8 /* Model Data */ = {
 			isa = PBXGroup;
 			children = (
+				B67448B7256305F900C1A7A1 /* OMDb.swift */,
 			);
 			path = "Model Data";
 			sourceTree = "<group>";
@@ -313,8 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6E868402552044300A50AA8 /* SearchViewController.swift in Sources */,
+				B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */,
 				B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */,
 				B6AC4E07255B682500E58943 /* Fade.swift in Sources */,
+				B67448BD25630D1A00C1A7A1 /* loadImages.swift in Sources */,
 				B6AED482255210C80074B704 /* ConfigureNavigationBar.swift in Sources */,
 				B6E8683E2552044300A50AA8 /* SceneDelegate.swift in Sources */,
 			);

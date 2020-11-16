@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController {
 
@@ -15,6 +16,10 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
+    
+    var searchingMovie = ""
+    var info: OMDb?
+    var textEditing = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,37 @@ class SearchViewController: UIViewController {
         
         movieView.isHidden = true
     }
+    func loadMovie() {
+        
+        posterImg.load(url: URL(string: (info?.poster)!)!)
+        titleLbl.text = info?.title
+        yearLbl.text = ("(\(info!.year))")
+        print(info!.title)
+    }
+    
+    func fetchMovieInfo(movieName: String) {
+        
+        searchingMovie = movieName.replacingOccurrences(of: " ", with: "+", options: NSString.CompareOptions.literal, range:nil)
+        
+        let contatosString = ("http://www.omdbapi.com/?apikey=49b353cf&t=\(searchingMovie)")
+        guard let url = URL(string: contatosString) else { return }
+
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+
+            guard let data = data else { return }
+
+            do {
+                let infoBaixada = try
+                    JSONDecoder().decode(OMDb.self, from: data)
+                self.info = infoBaixada
+                DispatchQueue.main.async {
+                    self.loadMovie()
+                }
+            } catch let jsonError {
+                print("Error serializing json:", jsonError)
+            }
+        }.resume()
+    }
     
 }
 
@@ -40,9 +76,18 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        textEditing = searchText
+        
+        if searchText == "" {
+            movieView.fadeOut()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text!.isEmpty {
             movieView.fadeOut()
         } else {
+            fetchMovieInfo(movieName: textEditing)
             movieView.isHidden = false
             movieView.fadeIn()
         }
