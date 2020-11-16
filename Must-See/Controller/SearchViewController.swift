@@ -41,7 +41,6 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text!.isEmpty {
-            movieView.isHidden = true
             movieView.fadeOut()
         } else {
             movieView.isHidden = false

@@ -13,14 +13,13 @@ extension UIView {
         self.alpha = 0.0
         
         UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions.curveEaseIn, animations: {
-            self.isHidden = false
             self.alpha = 1.0
         }, completion: completion)
         
     }
     
     func fadeOut() {
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             self.alpha = 0.0
         }
     }
