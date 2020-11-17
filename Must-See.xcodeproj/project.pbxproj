@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60F20B225645CF9003BEFBD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */; };
 		B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B67448B22562FF3D00C1A7A1 /* Alamofire */; };
 		B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448B7256305F900C1A7A1 /* OMDb.swift */; };
 		B67448BD25630D1A00C1A7A1 /* loadImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448BC25630D1A00C1A7A1 /* loadImages.swift */; };
@@ -66,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */,
+				B60F20B225645CF9003BEFBD /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +202,7 @@
 			name = "Must-See";
 			packageProductDependencies = (
 				B67448B22562FF3D00C1A7A1 /* Alamofire */,
+				B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */,
 			);
 			productName = "Must-See";
 			productReference = B6E868382552044300A50AA8 /* Must-See.app */;
@@ -274,6 +277,7 @@
 			mainGroup = B6E8682F2552044300A50AA8;
 			packageReferences = (
 				B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B60F20B025645CF9003BEFBD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = B6E868392552044300A50AA8 /* Products */;
 			projectDirPath = "";
@@ -659,6 +663,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B60F20B025645CF9003BEFBD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 		B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -670,6 +682,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B60F20B025645CF9003BEFBD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		B67448B22562FF3D00C1A7A1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */;

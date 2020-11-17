@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import IQKeyboardManagerSwift
 
 class SearchViewController: UIViewController {
 
@@ -29,7 +30,7 @@ class SearchViewController: UIViewController {
         configureNavigationBar(largeTitleColor: .white, backgoundColor: .purple, tintColor: .white, title: "Must-see", preferredLargeTitle: true)
         
         searchBar.searchTextField.backgroundColor = .white
-        movieView.layer.cornerRadius = 10
+        
         posterImg.layer.cornerRadius = 5
         
         view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -41,6 +42,7 @@ class SearchViewController: UIViewController {
         posterImg.load(url: URL(string: (info?.poster)!)!)
         titleLbl.text = info?.title
         yearLbl.text = ("(\(info!.year))")
+        movieView.layer.cornerRadius = 10
         print(info!.title)
     }
     
@@ -80,6 +82,12 @@ extension SearchViewController: UISearchBarDelegate {
         
         if searchText == "" {
             movieView.fadeOut()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+                posterImg.image = #imageLiteral(resourceName: "testeIMG")
+                titleLbl.text = "Original Title"
+                yearLbl.text = ("(year)")
+            }
         }
     }
     
@@ -89,6 +97,7 @@ extension SearchViewController: UISearchBarDelegate {
         } else {
             fetchMovieInfo(movieName: textEditing)
             movieView.isHidden = false
+            IQKeyboardManager.shared.resignFirstResponder()
             movieView.fadeIn()
         }
     }
