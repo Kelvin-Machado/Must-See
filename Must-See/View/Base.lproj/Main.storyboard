@@ -21,7 +21,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cxg-dw-U8G"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.59607666729999997" green="0.088161163030000003" blue="0.59610688690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.4588758349" green="0.080861784519999994" blue="0.48629862070000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -138,11 +138,8 @@
                             <constraint firstItem="nlx-Du-VAV" firstAttribute="top" secondItem="UTG-aj-4VG" secondAttribute="bottom" constant="15" id="rLK-AO-GJn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tZi-LX-40T">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Le3-XO-H2f"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="tZi-LX-40T"/>
                     <connections>
-                        <outlet property="addBtn" destination="Le3-XO-H2f" id="cNl-LF-vy6"/>
                         <outlet property="infoBtn" destination="nlx-Du-VAV" id="mLP-gs-lJ8"/>
                         <outlet property="posterImg" destination="UTG-aj-4VG" id="0he-t2-05W"/>
                     </connections>

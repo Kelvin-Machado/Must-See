@@ -11,27 +11,31 @@ class PosterViewController: UIViewController {
 
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var infoBtn: UIButton!
-    @IBOutlet weak var addBtn: UIBarButtonItem!
+    
+    let button = UIButton(type: .system)
+       
     
     var movieTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        button.clipsToBounds = true
+        button.contentMode = .scaleAspectFit
+        button.setImage(UIImage(named: "addBtn.png"), for: .normal)
+        button.setTitle(" Adicionar", for: .normal)
+        button.sizeToFit()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        button.addTarget(self, action: #selector(self.addItem), for: .touchUpInside)
+        
         infoBtn.titleLabel?.textAlignment = .center
         infoBtn.layer.cornerRadius = 10
         posterImg.layer.cornerRadius = 5
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func addItem() {
+        print("Clicado")
     }
-    */
 
 }
