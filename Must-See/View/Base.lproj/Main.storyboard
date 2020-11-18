@@ -50,16 +50,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUx-Zg-66e">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="177"/>
+                                        <connections>
+                                            <segue destination="i84-p5-Tzw" kind="show" identifier="goToPoster" id="A5G-L2-cfw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="RIM-2s-B2G" firstAttribute="leading" secondItem="tVd-aa-EIe" secondAttribute="trailing" constant="8" id="410-fn-EE4"/>
                                     <constraint firstAttribute="bottom" secondItem="tVd-aa-EIe" secondAttribute="bottom" constant="8" id="9XR-fn-KjD"/>
                                     <constraint firstItem="tVd-aa-EIe" firstAttribute="top" secondItem="exk-EA-FAy" secondAttribute="top" constant="8" id="AUc-av-k2a"/>
+                                    <constraint firstAttribute="bottom" secondItem="jUx-Zg-66e" secondAttribute="bottom" id="GaQ-nb-owZ"/>
                                     <constraint firstItem="RIM-2s-B2G" firstAttribute="top" secondItem="exk-EA-FAy" secondAttribute="top" constant="8" id="ilk-40-5f0"/>
                                     <constraint firstItem="Y7e-JG-JBi" firstAttribute="top" secondItem="RIM-2s-B2G" secondAttribute="bottom" constant="5" id="jbj-l4-hsr"/>
                                     <constraint firstItem="tVd-aa-EIe" firstAttribute="leading" secondItem="exk-EA-FAy" secondAttribute="leading" constant="8" id="jl8-02-MIC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUx-Zg-66e" secondAttribute="trailing" id="nmP-G1-SgK"/>
+                                    <constraint firstItem="jUx-Zg-66e" firstAttribute="leading" secondItem="exk-EA-FAy" secondAttribute="leading" id="por-d6-oeZ"/>
                                     <constraint firstAttribute="trailing" secondItem="RIM-2s-B2G" secondAttribute="trailing" constant="8" id="tTa-Il-IV5"/>
+                                    <constraint firstItem="jUx-Zg-66e" firstAttribute="top" secondItem="exk-EA-FAy" secondAttribute="top" id="vwf-VZ-QzI"/>
                                     <constraint firstAttribute="trailing" secondItem="Y7e-JG-JBi" secondAttribute="trailing" constant="7" id="z7r-B3-Xvh"/>
                                     <constraint firstAttribute="height" constant="177" id="ze9-yC-T2K"/>
                                 </constraints>
@@ -78,6 +88,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Must-see" id="pm2-uX-3Dw"/>
                     <connections>
+                        <outlet property="movieBtn" destination="jUx-Zg-66e" id="f1X-ag-I2a"/>
                         <outlet property="movieView" destination="exk-EA-FAy" id="cXH-X5-T1k"/>
                         <outlet property="posterImg" destination="tVd-aa-EIe" id="rHc-CV-NYA"/>
                         <outlet property="searchBar" destination="GS7-8i-Fe3" id="TCO-Sr-hKD"/>
@@ -88,6 +99,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2133.75" y="135.21126760563379"/>
+        </scene>
+        <!--Poster View Controller-->
+        <scene sceneID="A1U-eI-eQL">
+            <objects>
+                <viewController id="i84-p5-Tzw" customClass="PosterViewController" customModule="Must_See" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aNB-kc-JdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testeIMG" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-aj-4VG">
+                                <rect key="frame" x="61" y="15" width="198" height="294"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UTG-aj-4VG" secondAttribute="height" multiplier="150:223" id="6zJ-cE-9Qd"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nlx-Du-VAV">
+                                <rect key="frame" x="85.5" y="324" width="149" height="95"/>
+                                <color key="backgroundColor" red="0.59607666729999997" green="0.088161163030000003" blue="0.59610688690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <string key="title">・ Info ・ 
+↓</string>
+                                </state>
+                                <connections>
+                                    <segue destination="fgg-ll-egd" kind="presentation" identifier="presentInfo" id="KOv-pR-lSN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0YE-if-gQJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UTG-aj-4VG" firstAttribute="centerX" secondItem="aNB-kc-JdC" secondAttribute="centerX" id="Nvo-oV-yiI"/>
+                            <constraint firstItem="nlx-Du-VAV" firstAttribute="centerX" secondItem="aNB-kc-JdC" secondAttribute="centerX" id="R4J-7a-Kyb"/>
+                            <constraint firstItem="0YE-if-gQJ" firstAttribute="bottom" secondItem="UTG-aj-4VG" secondAttribute="bottom" constant="168" id="S49-bS-xhC"/>
+                            <constraint firstItem="UTG-aj-4VG" firstAttribute="top" secondItem="0YE-if-gQJ" secondAttribute="top" constant="15" id="qwa-WG-3g6"/>
+                            <constraint firstItem="nlx-Du-VAV" firstAttribute="top" secondItem="UTG-aj-4VG" secondAttribute="bottom" constant="15" id="rLK-AO-GJn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tZi-LX-40T">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Le3-XO-H2f"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addBtn" destination="Le3-XO-H2f" id="cNl-LF-vy6"/>
+                        <outlet property="infoBtn" destination="nlx-Du-VAV" id="mLP-gs-lJ8"/>
+                        <outlet property="posterImg" destination="UTG-aj-4VG" id="0he-t2-05W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPA-bY-lbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2904.375" y="134.1549295774648"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZJA-rT-1TZ">
+            <objects>
+                <viewController id="fgg-ll-egd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRJ-H2-Y2M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9wB-Hv-QVl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cP6-0Z-OiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3709" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="goT-Ho-owq">

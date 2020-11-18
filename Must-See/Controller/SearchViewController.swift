@@ -17,6 +17,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
+    @IBOutlet weak var movieBtn: UIButton!
     
     var searchingMovie = ""
     var info: OMDb?
@@ -43,12 +44,13 @@ class SearchViewController: UIViewController {
         titleLbl.text = info?.title
         yearLbl.text = ("(\(info!.year))")
         movieView.layer.cornerRadius = 10
-        print(info!.title)
     }
     
     func fetchMovieInfo(movieName: String) {
         
         searchingMovie = movieName.replacingOccurrences(of: " ", with: "+", options: NSString.CompareOptions.literal, range:nil)
+        
+        print(searchingMovie)
         
         let contatosString = ("http://www.omdbapi.com/?apikey=49b353cf&t=\(searchingMovie)")
         guard let url = URL(string: contatosString) else { return }
