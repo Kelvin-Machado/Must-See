@@ -77,8 +77,8 @@ class SearchViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PosterViewController {
             let vc = segue.destination as? PosterViewController
-            vc?.movieTitle = info!.title
             vc?.posterDownloadedImg = posterImg.image
+            vc?.infoPoster = info!
             
             
         }

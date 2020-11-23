@@ -8,14 +8,13 @@
 import UIKit
 
 class PosterViewController: UIViewController {
-
+    
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var infoBtn: UIButton!
     
     let button = UIButton(type: .system)
-       
     
-    var movieTitle = ""
+    var infoPoster: OMDb?
     var posterDownloadedImg: UIImage!
     
     private lazy var setupLargeTitleLabelOnce: Void = {[unowned self] in
@@ -26,7 +25,8 @@ class PosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
         button.clipsToBounds = true
         button.contentMode = .scaleAspectFit
         button.setImage(UIImage(named: "addBtn.png"), for: .normal)
@@ -39,12 +39,15 @@ class PosterViewController: UIViewController {
         infoBtn.layer.cornerRadius = 10
         posterImg.layer.cornerRadius = 10
         
-        self.title = movieTitle
+        self.title = infoPoster?.title
         posterImg.image = posterDownloadedImg
         
-        print(movieTitle)
+        print(infoPoster?.title ?? "Título não informado")
+        
     }
-
+    
+    //MARK: - Redimensionar títulos
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let _ = setupLargeTitleLabelOnce
@@ -72,7 +75,7 @@ class PosterViewController: UIViewController {
             }
             return view as? UILabel
         }
-
+        
         if let label = findLabel(in: navigationBar) {
             if label.text == self.title {
                 label.adjustsFontSizeToFitWidth = true
@@ -81,9 +84,19 @@ class PosterViewController: UIViewController {
         }
     }
     
-
+    
+    //MARK: - Adicionar títulos à lista
+    
     @objc func addItem() {
         print("Clicado")
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is InfoViewController {
+            let vc = segue.destination as? InfoViewController
+            vc?.infoView = infoPoster!
+            vc?.poster = posterDownloadedImg
+        }
+    }
+    
 }
