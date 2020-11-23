@@ -25,7 +25,6 @@ class PosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         button.clipsToBounds = true
         button.contentMode = .scaleAspectFit
@@ -37,7 +36,12 @@ class PosterViewController: UIViewController {
         
         infoBtn.titleLabel?.textAlignment = .center
         infoBtn.layer.cornerRadius = 10
+        infoBtn.layer.borderWidth = 3
+        infoBtn.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
         posterImg.layer.cornerRadius = 10
+        posterImg.layer.borderWidth = 2
+        posterImg.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
         self.title = infoPoster?.title
         posterImg.image = posterDownloadedImg

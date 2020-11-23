@@ -36,8 +36,6 @@ class SearchViewController: UIViewController {
         
         posterImg.layer.cornerRadius = 5
         
-        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        
         movieView.isHidden = true
     }
     func loadMovie() {

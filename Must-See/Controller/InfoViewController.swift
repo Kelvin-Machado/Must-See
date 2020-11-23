@@ -12,7 +12,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var tituloLbl: UILabel!
     @IBOutlet weak var sinopseTxtView: UITextView!
     @IBOutlet weak var notasLbl: UILabel!
-    @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var infoTxtView: UITextView!
     
     var infoView: OMDb?
     var poster: UIImage?
@@ -34,6 +34,8 @@ class InfoViewController: UIViewController {
         sinopseTxtView.text = infoView?.plot
         sinopseTxtView.isSelectable = false
         sinopseTxtView.isEditable = false
+        infoTxtView.isSelectable = false
+        infoTxtView.isEditable = false
         
         let notas = infoView!.ratings.count
         
@@ -46,13 +48,12 @@ class InfoViewController: UIViewController {
             print("Sem avaliações" )
         }
         
-        infoLbl.text = "\n Director: \(infoView!.director!)\n Runtime: \(infoView!.runtime!)\n Genre: \(infoView!.genre!) \n"
+        infoTxtView.text = " Director: \(infoView!.director!)\n Runtime: \(infoView!.runtime!)\n Genre: \(infoView!.genre!) \n"
         
         sinopseTxtView.layer.cornerRadius = 5
         notasLbl.clipsToBounds = true
         notasLbl.layer.cornerRadius = 5
-        infoLbl.clipsToBounds = true
-        infoLbl.layer.cornerRadius = 5
+        infoTxtView.layer.cornerRadius = 5
         
     }
 }

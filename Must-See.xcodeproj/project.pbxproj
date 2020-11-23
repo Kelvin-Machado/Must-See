@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B60F20B225645CF9003BEFBD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */; };
+		B661D2C9256C4C5B005F83EA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B661D2C8256C4C5B005F83EA /* GradientView.swift */; };
 		B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B67448B22562FF3D00C1A7A1 /* Alamofire */; };
 		B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448B7256305F900C1A7A1 /* OMDb.swift */; };
 		B67448BD25630D1A00C1A7A1 /* loadImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67448BC25630D1A00C1A7A1 /* loadImages.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B661D2C8256C4C5B005F83EA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B67448B7256305F900C1A7A1 /* OMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDb.swift; sourceTree = "<group>"; };
 		B67448BC25630D1A00C1A7A1 /* loadImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImages.swift; sourceTree = "<group>"; };
 		B678AB13256B428F003F6564 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				B6AC4E06255B682500E58943 /* Fade.swift */,
 				B67448BC25630D1A00C1A7A1 /* loadImages.swift */,
 				B678AB18256B5E6F003F6564 /* ResizeImage.swift */,
+				B661D2C8256C4C5B005F83EA /* GradientView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			files = (
 				B6E868402552044300A50AA8 /* SearchViewController.swift in Sources */,
 				B67EEBF2256581500036DF6A /* PosterViewController.swift in Sources */,
+				B661D2C9256C4C5B005F83EA /* GradientView.swift in Sources */,
 				B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */,
 				B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */,
 				B678AB14256B428F003F6564 /* InfoViewController.swift in Sources */,
