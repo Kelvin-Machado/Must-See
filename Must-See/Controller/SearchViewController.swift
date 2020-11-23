@@ -23,6 +23,8 @@ class SearchViewController: UIViewController {
     var info: OMDb?
     var textEditing = ""
     
+    var posterVC = PosterViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,6 +72,16 @@ class SearchViewController: UIViewController {
                 print("Error serializing json:", jsonError)
             }
         }.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PosterViewController {
+            let vc = segue.destination as? PosterViewController
+            vc?.movieTitle = info!.title
+            vc?.posterDownloadedImg = posterImg.image
+            
+            
+        }
     }
     
 }
