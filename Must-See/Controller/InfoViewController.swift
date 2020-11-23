@@ -8,7 +8,7 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
     @IBOutlet weak var tituloLbl: UILabel!
     @IBOutlet weak var sinopseTxtView: UITextView!
     @IBOutlet weak var notasLbl: UILabel!
@@ -21,13 +21,13 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         tituloLbl.text = "\(infoView!.title) (\(infoView!.year))"
         
-        let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 150, height: 233))
+        let path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 150, height: 200))
         sinopseTxtView.textContainer.exclusionPaths = [path]
         
-        imageView = UIImageView(image: poster!.resize(400))
+        imageView = UIImageView(image: poster!.resize(380))
         
         sinopseTxtView.addSubview(imageView!)
         
@@ -40,9 +40,7 @@ class InfoViewController: UIViewController {
         if notas != 0 {
             notasLbl.text = "\n"
             for source in 0...notas-1 {
-                print(" \(infoView!.ratings[source].source): \(infoView!.ratings[source].value)" )
-                notasLbl.text?.append(contentsOf: "\(infoView!.ratings[source].source): \(infoView!.ratings[source].value)\n")
-                
+                notasLbl.text?.append(contentsOf: " \(infoView!.ratings[source].source): \(infoView!.ratings[source].value) \n")
             }
         } else {
             print("Sem avaliações" )
@@ -55,6 +53,6 @@ class InfoViewController: UIViewController {
         notasLbl.layer.cornerRadius = 5
         infoLbl.clipsToBounds = true
         infoLbl.layer.cornerRadius = 5
-
+        
     }
 }

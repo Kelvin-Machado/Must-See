@@ -185,36 +185,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ph7-bq-hnS">
-                                <rect key="frame" x="12" y="286" width="296" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-oN-pEf">
-                                        <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informações" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc4-ej-fd7">
-                                        <rect key="frame" x="0.0" y="28.5" width="296" height="20.5"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="B4P-oN-pEf" firstAttribute="top" secondItem="DJD-0z-nK2" secondAttribute="top" id="1DO-jW-NiU"/>
-                                    <constraint firstItem="DJD-0z-nK2" firstAttribute="trailing" secondItem="B4P-oN-pEf" secondAttribute="trailing" id="8Q9-J5-bkW"/>
-                                    <constraint firstItem="nc4-ej-fd7" firstAttribute="top" secondItem="B4P-oN-pEf" secondAttribute="bottom" constant="8" id="BEm-S9-sdE"/>
-                                    <constraint firstItem="B4P-oN-pEf" firstAttribute="leading" secondItem="DJD-0z-nK2" secondAttribute="leading" id="K2s-OW-2Mt"/>
-                                    <constraint firstItem="DJD-0z-nK2" firstAttribute="trailing" secondItem="nc4-ej-fd7" secondAttribute="trailing" id="qhh-AI-EiQ"/>
-                                    <constraint firstItem="nc4-ej-fd7" firstAttribute="leading" secondItem="DJD-0z-nK2" secondAttribute="leading" id="vxX-iJ-VPJ"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="W5W-8Q-cbf"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="DJD-0z-nK2"/>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-eN-Saj">
+                                <rect key="frame" x="12" y="286" width="296" height="21"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informações" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuU-wL-vcQ">
+                                <rect key="frame" x="12" y="315" width="296" height="21"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9wB-Hv-QVl"/>
                         <color key="backgroundColor" red="0.4588758349" green="0.080861784519999994" blue="0.48629862070000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -223,13 +207,19 @@
                             <constraint firstItem="vne-VI-xad" firstAttribute="top" secondItem="35V-1h-Jkf" secondAttribute="bottom" constant="8" id="59c-OG-OVu"/>
                             <constraint firstItem="35V-1h-Jkf" firstAttribute="trailing" secondItem="9wB-Hv-QVl" secondAttribute="trailing" id="DsC-BO-Hpw"/>
                             <constraint firstItem="35V-1h-Jkf" firstAttribute="top" secondItem="9wB-Hv-QVl" secondAttribute="top" id="IRi-YL-870"/>
+                            <constraint firstItem="9wB-Hv-QVl" firstAttribute="trailing" secondItem="TXf-eN-Saj" secondAttribute="trailing" constant="12" id="Qxf-mA-m3f"/>
                             <constraint firstItem="35V-1h-Jkf" firstAttribute="leading" secondItem="9wB-Hv-QVl" secondAttribute="leading" id="TwW-u6-HFJ"/>
+                            <constraint firstItem="PuU-wL-vcQ" firstAttribute="leading" secondItem="9wB-Hv-QVl" secondAttribute="leading" constant="12" id="WHU-Rr-5Fi"/>
+                            <constraint firstItem="PuU-wL-vcQ" firstAttribute="top" secondItem="TXf-eN-Saj" secondAttribute="bottom" constant="8" id="XIO-er-l4y"/>
                             <constraint firstItem="vne-VI-xad" firstAttribute="leading" secondItem="9wB-Hv-QVl" secondAttribute="leading" constant="12" id="XcY-qG-j3y"/>
+                            <constraint firstItem="TXf-eN-Saj" firstAttribute="leading" secondItem="9wB-Hv-QVl" secondAttribute="leading" constant="12" id="nZJ-uj-hdl"/>
+                            <constraint firstItem="TXf-eN-Saj" firstAttribute="top" secondItem="vne-VI-xad" secondAttribute="bottom" constant="8" id="qNq-lw-XkP"/>
+                            <constraint firstItem="9wB-Hv-QVl" firstAttribute="trailing" secondItem="PuU-wL-vcQ" secondAttribute="trailing" constant="12" id="tCL-wG-6Ff"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="infoLbl" destination="nc4-ej-fd7" id="jA9-od-i0K"/>
-                        <outlet property="notasLbl" destination="B4P-oN-pEf" id="OxW-fw-cMJ"/>
+                        <outlet property="infoLbl" destination="PuU-wL-vcQ" id="qVd-GA-8fx"/>
+                        <outlet property="notasLbl" destination="TXf-eN-Saj" id="Ykp-Y1-ooB"/>
                         <outlet property="sinopseTxtView" destination="vne-VI-xad" id="BkT-Ee-IoS"/>
                         <outlet property="tituloLbl" destination="XWB-DE-FGU" id="8Cr-ea-pOm"/>
                     </connections>
