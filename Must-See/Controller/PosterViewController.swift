@@ -11,8 +11,7 @@ class PosterViewController: UIViewController {
     
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var infoBtn: UIButton!
-    
-    let button = UIButton(type: .system)
+    @IBOutlet weak var addBtn: UIBarButtonItem!
     
     var infoPoster: OMDb?
     var posterDownloadedImg: UIImage!
@@ -26,13 +25,8 @@ class PosterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.clipsToBounds = true
-        button.contentMode = .scaleAspectFit
-        button.setImage(UIImage(named: "addBtn.png"), for: .normal)
-        button.setTitle(" Adicionar", for: .normal)
-        button.sizeToFit()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-        button.addTarget(self, action: #selector(self.addItem), for: .touchUpInside)
+        addBtn.action = #selector(addItem)
+        addBtn.target = self
         
         infoBtn.titleLabel?.textAlignment = .center
         infoBtn.layer.cornerRadius = 10

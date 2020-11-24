@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Must_See" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="Must_See" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Informe o nome do filme" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS7-8i-Fe3">
@@ -29,7 +29,7 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exk-EA-FAy">
-                                <rect key="frame" x="16" y="150" width="288" height="177"/>
+                                <rect key="frame" x="16" y="146.5" width="288" height="177"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testeIMG" translatesAutoresizingMaskIntoConstraints="NO" id="tVd-aa-EIe">
                                         <rect key="frame" x="8" y="8" width="109" height="161"/>
@@ -86,14 +86,18 @@
                             <constraint firstItem="GS7-8i-Fe3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nbO-AJ-t5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Must-see" id="pm2-uX-3Dw"/>
+                    <navigationItem key="navigationItem" title="Must-see" id="pm2-uX-3Dw">
+                        <barButtonItem key="rightBarButtonItem" title="lista" image="Lista" id="Ye4-aF-xrI"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="listBtn" destination="Ye4-aF-xrI" id="duj-wZ-HEB"/>
                         <outlet property="movieBtn" destination="jUx-Zg-66e" id="f1X-ag-I2a"/>
                         <outlet property="movieView" destination="exk-EA-FAy" id="cXH-X5-T1k"/>
                         <outlet property="posterImg" destination="tVd-aa-EIe" id="rHc-CV-NYA"/>
                         <outlet property="searchBar" destination="GS7-8i-Fe3" id="TCO-Sr-hKD"/>
                         <outlet property="titleLbl" destination="RIM-2s-B2G" id="6dm-8i-TiA"/>
                         <outlet property="yearLbl" destination="Y7e-JG-JBi" id="gEg-aJ-E7v"/>
+                        <segue destination="jfr-Lz-o0f" kind="show" identifier="goToList" id="Iim-Ge-IAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,17 +109,17 @@
             <objects>
                 <viewController id="i84-p5-Tzw" customClass="PosterViewController" customModule="Must_See" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNB-kc-JdC" customClass="GradientView" customModule="Must_See" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="477"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="469.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testeIMG" translatesAutoresizingMaskIntoConstraints="NO" id="UTG-aj-4VG">
-                                <rect key="frame" x="61" y="15" width="198" height="294"/>
+                                <rect key="frame" x="63.5" y="15" width="193" height="286.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UTG-aj-4VG" secondAttribute="height" multiplier="150:223" id="6zJ-cE-9Qd"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nlx-Du-VAV">
-                                <rect key="frame" x="85.5" y="324" width="149" height="95"/>
+                                <rect key="frame" x="85.5" y="316.5" width="149" height="95"/>
                                 <color key="backgroundColor" red="0.59607666729999997" green="0.088161163030000003" blue="0.59610688690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="35"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,15 +142,18 @@
                             <constraint firstItem="nlx-Du-VAV" firstAttribute="top" secondItem="UTG-aj-4VG" secondAttribute="bottom" constant="15" id="rLK-AO-GJn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tZi-LX-40T"/>
+                    <navigationItem key="navigationItem" id="tZi-LX-40T">
+                        <barButtonItem key="rightBarButtonItem" title="adicionar" image="addBtn" id="ubr-Sg-Vro"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addBtn" destination="ubr-Sg-Vro" id="bpi-55-sdh"/>
                         <outlet property="infoBtn" destination="nlx-Du-VAV" id="mLP-gs-lJ8"/>
                         <outlet property="posterImg" destination="UTG-aj-4VG" id="0he-t2-05W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPA-bY-lbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904.375" y="134.1549295774648"/>
+            <point key="canvasLocation" x="2957" y="452"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="ZJA-rT-1TZ">
@@ -225,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP6-0Z-OiY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708.75" y="133.09859154929578"/>
+            <point key="canvasLocation" x="3756" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="goT-Ho-owq">
@@ -233,7 +240,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pb9-bp-2da" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="w3h-hK-OWK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.54509803921568623" green="0.14509803921568626" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,8 +261,39 @@
             </objects>
             <point key="canvasLocation" x="1136.25" y="135.21126760563379"/>
         </scene>
+        <!--Filmes Table View Controller-->
+        <scene sceneID="al4-2a-tpJ">
+            <objects>
+                <tableViewController id="jfr-Lz-o0f" customClass="FilmesTableViewController" customModule="Must_See" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T0D-JJ-8kF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="469.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Rjc-HJ-a3d" customClass="FilmesTableViewCell" customModule="Must_See" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rjc-HJ-a3d" id="QZe-Sj-nah">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jfr-Lz-o0f" id="oUL-NJ-Puy"/>
+                            <outlet property="delegate" destination="jfr-Lz-o0f" id="sgR-fm-7ol"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="4bK-Cd-8dZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38p-A1-dj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2957" y="-214"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Lista" width="25" height="25"/>
+        <image name="addBtn" width="25" height="25"/>
         <image name="testeIMG" width="300" height="446"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

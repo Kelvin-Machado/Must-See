@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var yearLbl: UILabel!
     @IBOutlet weak var movieBtn: UIButton!
+    @IBOutlet weak var listBtn: UIBarButtonItem!
     
     var searchingMovie = ""
     var info: OMDb?
@@ -29,6 +30,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         searchBar.delegate = self
+        
+        listBtn.action = #selector(goToList)
+        listBtn.target = self
         
         configureNavigationBar(largeTitleColor: .white, backgoundColor: .purple, tintColor: .white, title: "Must-see", preferredLargeTitle: true)
         
@@ -80,6 +84,10 @@ class SearchViewController: UIViewController {
             
             
         }
+    }
+    
+    @objc func goToList() {
+        navigationController?.pushViewController(FilmesTableViewController(), animated: true)
     }
     
 }
