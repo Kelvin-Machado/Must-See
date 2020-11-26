@@ -17,6 +17,8 @@
 		B678AB14256B428F003F6564 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678AB13256B428F003F6564 /* InfoViewController.swift */; };
 		B678AB19256B5E6F003F6564 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678AB18256B5E6F003F6564 /* ResizeImage.swift */; };
 		B67EEBF2256581500036DF6A /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67EEBF1256581500036DF6A /* PosterViewController.swift */; };
+		B68EECE3256F280100CD44E4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B68EECE2256F280100CD44E4 /* RealmSwift */; };
+		B68EECE8256F287700CD44E4 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EECE7256F287700CD44E4 /* Filme.swift */; };
 		B6AC4E07255B682500E58943 /* Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4E06255B682500E58943 /* Fade.swift */; };
 		B6AED482255210C80074B704 /* ConfigureNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */; };
 		B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8683B2552044300A50AA8 /* AppDelegate.swift */; };
@@ -55,6 +57,7 @@
 		B678AB13256B428F003F6564 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B678AB18256B5E6F003F6564 /* ResizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
 		B67EEBF1256581500036DF6A /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
+		B68EECE7256F287700CD44E4 /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		B6AC4E06255B682500E58943 /* Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fade.swift; sourceTree = "<group>"; };
 		B6AED481255210C80074B704 /* ConfigureNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureNavigationBar.swift; sourceTree = "<group>"; };
 		B6E868382552044300A50AA8 /* Must-See.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Must-See.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68EECE3256F280100CD44E4 /* RealmSwift in Frameworks */,
 				B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */,
 				B60F20B225645CF9003BEFBD /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B67448B7256305F900C1A7A1 /* OMDb.swift */,
+				B68EECE7256F287700CD44E4 /* Filme.swift */,
 			);
 			path = "Model Data";
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			packageProductDependencies = (
 				B67448B22562FF3D00C1A7A1 /* Alamofire */,
 				B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */,
+				B68EECE2256F280100CD44E4 /* RealmSwift */,
 			);
 			productName = "Must-See";
 			productReference = B6E868382552044300A50AA8 /* Must-See.app */;
@@ -296,6 +302,7 @@
 			packageReferences = (
 				B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B60F20B025645CF9003BEFBD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				B68EECE1256F280100CD44E4 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = B6E868392552044300A50AA8 /* Products */;
 			projectDirPath = "";
@@ -343,6 +350,7 @@
 				B6E868402552044300A50AA8 /* SearchViewController.swift in Sources */,
 				B67EEBF2256581500036DF6A /* PosterViewController.swift in Sources */,
 				B661D2C9256C4C5B005F83EA /* GradientView.swift in Sources */,
+				B68EECE8256F287700CD44E4 /* Filme.swift in Sources */,
 				B660CEA5256D9A36004BFFC6 /* FilmesTableViewCell.swift in Sources */,
 				B67448B8256305F900C1A7A1 /* OMDb.swift in Sources */,
 				B6E8683C2552044300A50AA8 /* AppDelegate.swift in Sources */,
@@ -703,6 +711,14 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		B68EECE1256F280100CD44E4 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -715,6 +731,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B68EECE2256F280100CD44E4 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B68EECE1256F280100CD44E4 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
