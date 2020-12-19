@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PosterViewController: UIViewController {
     
@@ -16,6 +17,9 @@ class PosterViewController: UIViewController {
     var infoPoster: OMDb?
     var posterDownloadedImg: UIImage!
     
+    let realm = try! Realm()
+    var filme: Results<Filme>?
+    
     private lazy var setupLargeTitleLabelOnce: Void = {[unowned self] in
         if #available(iOS 11.0, *) {
             self.setupLargeTitleAutoAdjustFont()
@@ -24,6 +28,8 @@ class PosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filme = realm.objects(Filme.self)
         
         addBtn.action = #selector(addItem)
         addBtn.target = self
@@ -87,6 +93,20 @@ class PosterViewController: UIViewController {
     
     @objc func addItem() {
         print("Clicado")
+        
+        let newItem = Filme()
+        newItem.title = infoPoster?.title ?? ""
+        newItem.releaseDate = Date()
+        newItem.searchedTitle = infoPoster?.title ?? ""
+        newItem.watched = false
+        
+        do {
+            try realm.write {
+                realm.add(newItem)
+            }
+        } catch {
+            print("Error saving new movie \(error)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
