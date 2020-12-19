@@ -93,7 +93,7 @@ class PosterViewController: UIViewController {
     
     @objc func addItem() {
         print("Clicado")
-        
+        let sucesso = true
         let newItem = Filme()
         newItem.title = infoPoster?.title ?? ""
         newItem.releaseDate = Date()
@@ -103,10 +103,43 @@ class PosterViewController: UIViewController {
         do {
             try realm.write {
                 realm.add(newItem)
+                showAlert(sucesso: sucesso)
             }
         } catch {
             print("Error saving new movie \(error)")
+            showAlert(sucesso: !sucesso)
         }
+    }
+    
+    func showAlert(sucesso: Bool) {
+        var msg = ""
+        var titulo = ""
+        sucesso ? (msg = "Item salvo na lista") : (msg = "Não foi possível salvar esse item")
+        sucesso ? (titulo = "Sucesso!!!") : (titulo = "Erro")
+        let alert = UIAlertController(title: titulo, message: msg, preferredStyle: .alert)
+    
+        var myMutableString = NSMutableAttributedString()
+        myMutableString = NSMutableAttributedString(string: msg as String, attributes: [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Medium", size: 14.0)!])
+        myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: NSRange(location:0,length:msg.count))
+        alert.setValue(myMutableString, forKey: "attributedMessage")
+        
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.lightGray
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style {
+              case .default:
+                    print("default")
+
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+              @unknown default:
+                fatalError()
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
