@@ -40,34 +40,17 @@ class FilmesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        
-        
-        let mySwitch = UISwitch()
-        mySwitch.addTarget(self, action: #selector(didChangeSwitch), for: .valueChanged)
-        cell.accessoryView = mySwitch
-        
-        
         if filmes!.count == 0 {
             cell.textLabel?.text = "Adicione Filmes"
-            mySwitch.isHidden = true
         } else {
-            cell.textLabel?.text = filmes![indexPath.row].title
-            if filmes![indexPath.row].watched {
-                mySwitch.isOn = true
+            if let item = filmes?[indexPath.row] {
+                cell.textLabel?.text = item.title
+                cell.accessoryType = item.watched ? .checkmark : .none
             } else {
-                mySwitch.isOn = false
+                cell.textLabel?.text = "Adicione Filmes"
             }
         }
-        
         return cell
-    }
-    
-    @objc func didChangeSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            print("Is On")
-        } else {
-            print("Is off")
-        }
     }
     
     func loadCategories() {
