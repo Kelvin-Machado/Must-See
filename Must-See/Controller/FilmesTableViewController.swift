@@ -20,7 +20,6 @@ class FilmesTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         loadCategories()
-
     }
 
     // MARK: - Table view data source
@@ -51,6 +50,21 @@ class FilmesTableViewController: UITableViewController {
             }
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = filmes?[indexPath.row] {
+            do {
+                try realm.write{
+                    item.watched = !item.watched
+                }
+            } catch {
+                print("Erro ao salvar watched status, \(error)")
+            }
+        }
+        
+        tableView.reloadData()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func loadCategories() {
