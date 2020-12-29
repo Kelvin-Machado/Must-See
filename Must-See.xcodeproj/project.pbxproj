@@ -16,6 +16,7 @@
 		B678AB14256B428F003F6564 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678AB13256B428F003F6564 /* InfoViewController.swift */; };
 		B678AB19256B5E6F003F6564 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678AB18256B5E6F003F6564 /* ResizeImage.swift */; };
 		B67EEBF2256581500036DF6A /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67EEBF1256581500036DF6A /* PosterViewController.swift */; };
+		B68224E6259AA77B0023216E /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = B68224E5259AA77B0023216E /* SwipeCellKit */; };
 		B68EECE3256F280100CD44E4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B68EECE2256F280100CD44E4 /* RealmSwift */; };
 		B68EECE8256F287700CD44E4 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68EECE7256F287700CD44E4 /* Filme.swift */; };
 		B6AC4E07255B682500E58943 /* Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC4E06255B682500E58943 /* Fade.swift */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68224E6259AA77B0023216E /* SwipeCellKit in Frameworks */,
 				B68EECE3256F280100CD44E4 /* RealmSwift in Frameworks */,
 				B67448B32562FF3D00C1A7A1 /* Alamofire in Frameworks */,
 				B60F20B225645CF9003BEFBD /* IQKeyboardManagerSwift in Frameworks */,
@@ -224,6 +226,7 @@
 				B67448B22562FF3D00C1A7A1 /* Alamofire */,
 				B60F20B125645CF9003BEFBD /* IQKeyboardManagerSwift */,
 				B68EECE2256F280100CD44E4 /* RealmSwift */,
+				B68224E5259AA77B0023216E /* SwipeCellKit */,
 			);
 			productName = "Must-See";
 			productReference = B6E868382552044300A50AA8 /* Must-See.app */;
@@ -300,6 +303,7 @@
 				B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B60F20B025645CF9003BEFBD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				B68EECE1256F280100CD44E4 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				B68224E4259AA77B0023216E /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = B6E868392552044300A50AA8 /* Products */;
 			projectDirPath = "";
@@ -707,6 +711,14 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		B68224E4259AA77B0023216E /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		B68EECE1256F280100CD44E4 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa";
@@ -727,6 +739,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B67448B12562FF3D00C1A7A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B68224E5259AA77B0023216E /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B68224E4259AA77B0023216E /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
 		};
 		B68EECE2256F280100CD44E4 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
