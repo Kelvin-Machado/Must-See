@@ -16,43 +16,35 @@ class FilmesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Lista de filmes"
-        tableView.rowHeight = 80.0
+        tableView.rowHeight = 65.0
         
         tableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: "cell")
-        loadCategories()
+        loadFilmes()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if filmes!.count == 0 {
-            return 1
-        } else {
-            return  filmes!.count
-        }
+        return filmes?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SwipeTableViewCell
         
         cell.delegate = self
         
-        if filmes!.count == 0 {
-            cell.textLabel?.text = "Adicione Filmes"
-        } else {
-            if let item = filmes?[indexPath.row] {
-                cell.textLabel?.text = item.title
-                cell.accessoryType = item.watched ? .checkmark : .none
-            } else {
-                cell.textLabel?.text = "Adicione Filmes"
-            }
+        if let item = filmes?[indexPath.row] {
+            cell.textLabel?.text = item.title
+            cell.accessoryType = item.watched ? .checkmark : .none
         }
+        
         return cell
     }
     
@@ -71,8 +63,8 @@ class FilmesTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func loadCategories() {
-        filmes = realm.objects(Filme.self)
+    func loadFilmes() {
+        filmes = realm.objects(Filme.self).sorted(byKeyPath: "title", ascending: true)
         tableView.reloadData()
     }
 }
