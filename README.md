@@ -23,3 +23,8 @@
 3. #### Remover filmes da lista
 
 <img src="https://media.giphy.com/media/sGLoPJYq1ZkQUrM9tX/giphy.gif">
+
+
+<ul>
+<li style="text-align: left;"><strong>OMDb API desenvolvida por Brian Fritz, dispon&iacute;vel em </strong><a title="OMDb API" href="http://www.omdbapi.com/"><strong>OMDb API</strong></a></li>
+</ul>
