@@ -3,7 +3,7 @@
 </p>
 > Aplicativo para listar filmes que deseja ver<br><br>
 
-<img src="https://img.shields.io/badge/Alamofire-v5.4.0-blue"> <img src="https://img.shields.io/badge/IQKeyboardManagerSwift-v6.5.6-blue"> <img src="https://img.shields.io/badge/SwipeCellKit-v2.7.1-blue"> <img src="https://img.shields.io/badge/Realm-v10.1.4-blue">
+<img src="https://img.shields.io/badge/Alamofire-v5.4.0-blue"> <img src="https://img.shields.io/badge/IQKeyboardManagerSwift-v6.5.6-blue"> <img src="https://img.shields.io/badge/SwipeCellKit-v2.7.1-blue">  <img src="https://img.shields.io/badge/RealmSwift-v10.1.4-blue">
 
 ## Requerimentos
 
